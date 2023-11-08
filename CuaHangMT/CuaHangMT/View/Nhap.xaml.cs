@@ -18,7 +18,7 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for Nhap.xaml
 	/// </summary>
-	public partial class Nhap : Page
+	public partial class Nhap : UserControl
 	{
 		public Nhap()
 		{

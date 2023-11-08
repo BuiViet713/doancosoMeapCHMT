@@ -64,8 +64,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controller\ChitietNhapController.cs" />
+    <Compile Include="Controller\ChitietXuatController.cs" />
+    <Compile Include="Controller\DanhMucController.cs" />
+    <Compile Include="Controller\HoaDonNhapController.cs" />
+    <Compile Include="Controller\HoaDonXuatController.cs" />
+    <Compile Include="Controller\KhachHangController.cs" />
+    <Compile Include="Controller\MayTinhController.cs" />
+    <Compile Include="Controller\NhaCungCapController.cs" />
+    <Compile Include="Controller\NhapController.cs" />
+    <Compile Include="Controller\XuatController.cs" />
+    <Compile Include="Model\ChiTietNhapModel.cs" />
+    <Compile Include="Model\ChiTietXuatModel.cs" />
+    <Compile Include="Model\DanhMucModel.cs" />
+    <Compile Include="Model\HoaDonNhapModel.cs" />
+    <Compile Include="Model\HoaDonXuatModel.cs" />
+    <Compile Include="Model\KhachHangModel.cs" />
+    <Compile Include="Model\NhaCungCapModel.cs" />
+    <Compile Include="MyRegular.cs" />
     <Compile Include="View\DanhMuc.xaml.cs">
       <DependentUpon>DanhMuc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang.xaml.cs">
+      <DependentUpon>KhachHang.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MayTinh.xaml.cs">
       <DependentUpon>MayTinh.xaml</DependentUpon>
@@ -76,8 +97,14 @@
     <Compile Include="View\Nhap.xaml.cs">
       <DependentUpon>Nhap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\TaiKhoanView.xaml.cs">
+      <DependentUpon>TaiKhoanView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ThongKe.xaml.cs">
       <DependentUpon>ThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongTinCaNhan.xaml.cs">
+      <DependentUpon>ThongTinCaNhan.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Xuat.xaml.cs">
       <DependentUpon>Xuat.xaml</DependentUpon>
@@ -107,6 +134,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\KhachHang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MayTinh.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,7 +150,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\TaiKhoanView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThongTinCaNhan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -204,5 +243,6 @@
     <Resource Include="images\transaction_page.png" />
     <Resource Include="images\user.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

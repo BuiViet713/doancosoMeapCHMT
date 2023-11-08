@@ -18,16 +18,11 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for Xuat.xaml
 	/// </summary>
-	public partial class Xuat : Page
+	public partial class Xuat : UserControl
 	{
 		public Xuat()
 		{
 			InitializeComponent();
 		}
-
-		private void btnBanHang_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }

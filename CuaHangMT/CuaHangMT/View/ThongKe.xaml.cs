@@ -18,16 +18,11 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for ThongKe.xaml
 	/// </summary>
-	public partial class ThongKe : Page
+	public partial class ThongKe : UserControl
 	{
 		public ThongKe()
 		{
 			InitializeComponent();
 		}
-
-		private void btnBanHang_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }

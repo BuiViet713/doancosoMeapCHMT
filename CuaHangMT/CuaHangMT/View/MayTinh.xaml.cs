@@ -18,16 +18,11 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for MayTinh.xaml
 	/// </summary>
-	public partial class MayTinh : Page
+	public partial class MayTinh : UserControl
 	{
 		public MayTinh()
 		{
 			InitializeComponent();
 		}
-
-		private void btnCheck_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }

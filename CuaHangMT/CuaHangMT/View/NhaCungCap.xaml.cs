@@ -18,16 +18,11 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for NhaCungCap.xaml
 	/// </summary>
-	public partial class NhaCungCap : Page
+	public partial class NhaCungCap : UserControl
 	{
 		public NhaCungCap()
 		{
 			InitializeComponent();
 		}
-
-		private void btnThemmoi_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }

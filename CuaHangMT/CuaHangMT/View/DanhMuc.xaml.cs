@@ -18,21 +18,11 @@ namespace CuaHangMT.View
 	/// <summary>
 	/// Interaction logic for DanhMuc.xaml
 	/// </summary>
-	public partial class DanhMuc : Page
+	public partial class DanhMuc : UserControl
 	{
 		public DanhMuc()
 		{
 			InitializeComponent();
 		}
-
-		internal void ShowDialog()
-		{
-			throw new NotImplementedException();
-		}
-
-		private void btnTimKiem_Click(object sender, RoutedEventArgs e)
-		{
-
-        }
-    }
+	}
 }
