@@ -1,4 +1,5 @@
-﻿using CuaHangMT.View;
+﻿using CuaHangMT.Model;
+using CuaHangMT.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +21,29 @@ namespace CuaHangMT
 	/// </summary>
 	public partial class homes : Window
 	{
-		public homes()
+		public TaiKhoan acc;
+		public homes(TaiKhoan acc)
 		{
+			this.acc = acc;
+
 			InitializeComponent();
+			if(acc.LoaiTaiKhoan != "admin") 
+			{
+				pq();
+			}
+			thongtincanhan.loadThongTin(acc);
+			xuat.thongtinxuat(acc);	
 		}
 		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
 		{
 			if (e.LeftButton == MouseButtonState.Pressed)
 				DragMove();
 		}
-
+		public void pq()
+		{
+			btnThongKe.Visibility=Visibility.Collapsed;
+			btnTaiKhoan.Visibility=Visibility.Collapsed;	
+		}
 		private void btnMinimize_Click(object sender, RoutedEventArgs e)
 		{
 			WindowState = WindowState.Minimized;

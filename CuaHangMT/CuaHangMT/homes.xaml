@@ -221,10 +221,7 @@
 
         </Grid>
 
-
         <Grid>
-
-
 
 
             <Button x:Name="btnMinimize"                           

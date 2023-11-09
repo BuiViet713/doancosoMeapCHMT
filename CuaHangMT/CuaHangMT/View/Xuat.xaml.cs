@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CuaHangMT.Controller;
+using CuaHangMT.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,24 @@ namespace CuaHangMT.View
 	/// </summary>
 	public partial class Xuat : UserControl
 	{
+		
+		private TaiKhoan acc;
+		private int currIDXuat = XuatController.Instance.GetMaxID();
 		public Xuat()
 		{
 			InitializeComponent();
+			LoadListView();
+		}
+		public void thongtinxuat (TaiKhoan acc)
+		{
+			this.acc = acc;
+			txtMaMayTinh.IsReadOnly = true;
+			txtSoLuong.IsReadOnly = true;
+		}
+		public void LoadListView()
+		{
+			List<ChiTietXuatModel> danhSachXuat = ChiTietXuatController.Instance.GetByIdXuat(currIDXuat);
+			this.lstXuat.ItemsSource = danhSachXuat;
 		}
 	}
 }

@@ -48,10 +48,10 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListView x:Name="dgvNcc" Grid.ColumnSpan="4" Margin="-1,78,-260,-317"  Background="#272B2F"  >
+                    <ListView x:Name="dgvTaiKhoan" Grid.ColumnSpan="4" Margin="53,80,-222,-319"  Background="#272B2F" Foreground="White"  >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Mã" Width="120" DisplayMemberBinding="{Binding MaNCC}">
+                                <GridViewColumn Header="Tên" Width="200" DisplayMemberBinding="{Binding UserName}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -66,7 +66,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Tên" Width="180" DisplayMemberBinding="{Binding TenNCC}">
+                                <GridViewColumn Header="Mật Khẩu " Width="200" DisplayMemberBinding="{Binding Password}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -81,7 +81,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Địa chỉ" Width="200" DisplayMemberBinding="{Binding DiaChiNCC}">
+                                <GridViewColumn Header="Tên hiện thị" Width="200" DisplayMemberBinding="{Binding TenHienThi}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -96,22 +96,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding EmailNCC}">
-                                    <GridViewColumn.HeaderContainerStyle>
-                                        <Style TargetType="{x:Type GridViewColumnHeader}">
-                                            <Setter Property="Foreground" Value="White" />
-                                            <Setter Property="Background" Value="#272B2F" />
-                                            <Setter Property="FontSize" Value="20"/>
-                                            <Setter Property="FontFamily" Value="Times New Roman"/>
-                                        </Style>
-                                    </GridViewColumn.HeaderContainerStyle>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding ''}" Foreground="White" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn Header="Số điện thoại" Width="200" DisplayMemberBinding="{Binding SoDienThoaiNCC}">
+                                <GridViewColumn Header="Loại tài khoản" Width="200" DisplayMemberBinding="{Binding LoaiTaiKhoan}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -127,18 +112,10 @@
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
 
+
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <TextBox x:Name="txtCCCD"
-                FontSize="22"
-                FontWeight="Medium"
-                FontFamily="Times New Roman"
-                Background="#272B2F"
-                Grid.Column="2"
-                BorderThickness="0"
-                Margin="10,404,190,-388" 
-                IsReadOnly="True" IsUndoEnabled="False" Foreground="White"/>
                 </Grid>
                 <Button x:Name="btnThemMoi"
             Margin="655,364,146,140"
@@ -146,7 +123,7 @@
             Content="Thêm mới"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1"  >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" Click="btnThemMoi_Click"  >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -164,7 +141,7 @@
             Content="Cập nhập"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"   Grid.Row="1" >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"   Grid.Row="1" Click="btnCapNhap_Click" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -182,7 +159,7 @@
             Content="Xóa"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" Click="btnXoa_Click" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -208,13 +185,14 @@
             Grid.Column="0"
             VerticalAlignment="Top"
             Margin="19,411,647,0" Grid.Row="1"/>
-                <TextBox x:Name="txtTenNCC"
+                <TextBox x:Name="txtTenHienThi"
+                          Text="{Binding SelectedItem.TenHienThi, ElementName=dgvTaiKhoan}"
             FontSize="22"
             FontWeight="Medium"
             FontFamily="Times New Roman"
             Background="#272B2F"
             BorderThickness="0"
-            Margin="150,401,568,97" Grid.Row="1" IsEnabled="True" Foreground="White" Text=""/>
+            Margin="150,401,568,97" Grid.Row="1" IsEnabled="True" Foreground="White"/>
                 <TextBlock
             Foreground="White"
             FontSize="20"
@@ -228,7 +206,7 @@
             Content="Xem"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"  Grid.Row="1">
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"  Grid.Row="1" Click="btnXem_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -251,7 +229,18 @@
 
 
 
-                <ComboBox x:Name="cbTenNXB" HorizontalAlignment="Left" Height="25" Margin="149,468,0,0" VerticalAlignment="Top" Width="181" Grid.Row="1" BorderBrush="#FF212529" Background="#FF921616"/>
+                <ComboBox x:Name="cbLoaiTK" HorizontalAlignment="Left" Height="25" Margin="149,468,0,0" VerticalAlignment="Top" Width="181" Grid.Row="1" BorderBrush="#FF212529" Background="#FF921616">
+                    <ComboBoxItem Content="Admin"/>
+                    <ComboBoxItem Content="Member"/>
+                </ComboBox>
+                <TextBox x:Name="txtTaiKhoan"
+                    Text="{Binding SelectedItem.UserName, ElementName=dgvTaiKhoan}"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    FontFamily="Times New Roman"
+                    Background="#272B2F"
+                    BorderThickness="0"
+                    Margin="143,339,575,159" Grid.Row="1" IsEnabled="True" Foreground="White"/>
 
 
 

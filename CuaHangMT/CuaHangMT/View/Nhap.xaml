@@ -68,10 +68,10 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListView x:Name="dgvNcc" Grid.ColumnSpan="4" Margin="-1,78,-260,-317"  Background="#272B2F"  >
+                    <ListView x:Name="dgvNhap" Grid.ColumnSpan="4" Margin="-1,78,-260,-317" Background="#272B2F"  >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Mã" Width="120" DisplayMemberBinding="{Binding MaNCC}">
+                                <GridViewColumn Header="Số lượng" Width="200" DisplayMemberBinding="{Binding Ma}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -86,7 +86,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Tên" Width="180" DisplayMemberBinding="{Binding TenNCC}">
+                                <GridViewColumn Header="Mã máy tính" Width="250" DisplayMemberBinding="{Binding TenNCC}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -101,7 +101,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Địa chỉ" Width="200" DisplayMemberBinding="{Binding DiaChiNCC}">
+                                <GridViewColumn Header="Số hoá đơn nhập" Width="250" DisplayMemberBinding="{Binding DiaChiNCC}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -116,7 +116,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Email" Width="200" DisplayMemberBinding="{Binding EmailNCC}">
+                                <GridViewColumn Header="ID" Width="200" DisplayMemberBinding="{Binding EmailNCC}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -131,21 +131,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Số điện thoại" Width="200" DisplayMemberBinding="{Binding SoDienThoaiNCC}">
-                                    <GridViewColumn.HeaderContainerStyle>
-                                        <Style TargetType="{x:Type GridViewColumnHeader}">
-                                            <Setter Property="Foreground" Value="White" />
-                                            <Setter Property="Background" Value="#272B2F" />
-                                            <Setter Property="FontSize" Value="20"/>
-                                            <Setter Property="FontFamily" Value="Times New Roman"/>
-                                        </Style>
-                                    </GridViewColumn.HeaderContainerStyle>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <TextBlock Text="{Binding }" Foreground="White" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
+
 
                             </GridView>
                         </ListView.View>

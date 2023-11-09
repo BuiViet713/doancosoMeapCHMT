@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace CuaHangMT.Controller
 {
-	public class ChiTietXuatDAO
+	public class ChiTietXuatController
 	{
-		private ChiTietXuatDAO() { }
-		private static ChiTietXuatDAO instance;
+		private ChiTietXuatController() { }
+		private static ChiTietXuatController instance;
 
-		public static ChiTietXuatDAO Instance
+		public static ChiTietXuatController Instance
 		{
-			get { if (instance == null) instance = new ChiTietXuatDAO(); return ChiTietXuatDAO.instance; }
-			private set { ChiTietXuatDAO.instance = value; }
+			get { if (instance == null) instance = new ChiTietXuatController(); return ChiTietXuatController.instance; }
+			private set { ChiTietXuatController.instance = value; }
 		}
 
 		public List<ChiTietXuatModel> GetByIdXuat(int idXuat)

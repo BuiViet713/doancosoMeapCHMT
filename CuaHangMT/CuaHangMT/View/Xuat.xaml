@@ -21,7 +21,7 @@
                         <ColumnDefinition Width="380"/>
                         <ColumnDefinition Width="120"/>
                     </Grid.ColumnDefinitions>
-                    <syncfusion:UpDown Name="upDown" 
+                    <syncfusion:UpDown x:Name="txtSoLuong" 
                                    Margin="76,427,10,-405" 
                                    Grid.Column="2"
                                    Background="#272B2F" FocusedBackground="#FF272B2F" NegativeBackground="#FF272B2F" RangeAdornerBackground="#FF272B2F" ZeroColor="White" BorderBrush="#FF272B2F" NegativeBorderBrush="#FF1A1E29" FontSize="16" FontFamily="Times New Roman"

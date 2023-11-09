@@ -53,7 +53,7 @@ namespace CuaHangMT
 				{
 					this.Hide();
 					TaiKhoan acc = TaiKhoanController.Instance.GetByUsername(txtUser.Text);
-					homes f = new homes();
+					homes f = new homes(acc);
 					f.ShowDialog();
 					this.Show();
 				}

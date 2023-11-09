@@ -48,7 +48,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListView x:Name="dgvKhachHang" Grid.ColumnSpan="4" Margin="-1,78,-260,-317"  Background="#272B2F"  >
+                    <ListView x:Name="dgvKhachHang" Grid.ColumnSpan="4" Margin="-1,78,-260,-317"  Background="#272B2F" Foreground="White"  >
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="CCCD" Width="120" DisplayMemberBinding="{Binding Cmtnd}">
@@ -130,15 +130,6 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <TextBox x:Name="txtCCCD"
-                FontSize="22"
-                FontWeight="Medium"
-                FontFamily="Times New Roman"
-                Background="#272B2F"
-                Grid.Column="2"
-                BorderThickness="0"
-                Margin="10,404,210,-388" 
-                IsReadOnly="True" IsUndoEnabled="False" Foreground="White"/>
                 </Grid>
                 <Button x:Name="btnThemMoi"
             Margin="655,364,146,140"
@@ -146,7 +137,7 @@
             Content="Thêm mới"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1"  >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" Click="btnThemMoi_Click_1"  >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -164,7 +155,7 @@
             Content="Cập nhập"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"   Grid.Row="1" >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"   Grid.Row="1" Click="btnCapNhap_Click_1" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -182,7 +173,7 @@
             Content="Xóa"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" >
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Grid.Row="1" Click="btnXoa_Click_1" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -215,13 +206,13 @@
             Grid.Column="0"
             VerticalAlignment="Top"
             Margin="19,464,647,0" Grid.Row="1"/>
-                <TextBox x:Name="txtTenNCC"
+                <TextBox x:Name="txtTenKH"
             FontSize="22"
             FontWeight="Medium"
             FontFamily="Times New Roman"
             Background="#272B2F"
             BorderThickness="0"
-            Margin="150,401,591,97" Grid.Row="1" IsEnabled="True" Foreground="White" Text=""/>
+            Margin="150,401,591,97" Grid.Row="1" IsEnabled="True" Foreground="White" Text="{Binding SelectedItem.Ten, ElementName=dgvKhachHang}"/>
                 <TextBlock Text="SĐT : "
             Foreground="White"
             FontSize="20"
@@ -236,28 +227,20 @@
             Grid.Column="0"
             VerticalAlignment="Top"
             Margin="353,414,405,0" Grid.Row="1" Height="27"/>
-                <TextBox x:Name="txtSđt"
-            FontSize="22"
-            FontWeight="Medium"
-            FontFamily="Times New Roman"
-            Background="#272B2F"
-            BorderThickness="0"
-            Margin="450,342,290,154" 
-            IsReadOnly="True" IsUndoEnabled="False" Foreground="White" Grid.Row="1"/>
                 <TextBox x:Name="txtDiaChi"
             FontSize="22"
             FontWeight="Medium"
             FontFamily="Times New Roman"
             Background="#272B2F"
             BorderThickness="0"
-            Margin="450,405,291,96" Grid.Row="1" IsEnabled="True" Foreground="White" Text=""/>
+            Margin="450,405,291,96" Grid.Row="1" IsEnabled="True" Foreground="White" Text="{Binding SelectedItem.DiaChi, ElementName=dgvKhachHang}"/>
                 <Button x:Name="btnXem"
             Margin="772,411,29,93"
             Foreground="White"
             Content="Xem"
             FontFamily="Times New Roman"
             FontSize="20"
-            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"  Grid.Row="1">
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793"  Grid.Row="1" Click="btnXem_Click_1">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -282,12 +265,27 @@
                     FontFamily="Times New Roman"
                     Background="#272B2F"
                     BorderThickness="0"
-                    Margin="449,462,292,39" Grid.Row="1" IsEnabled="True" Foreground="White" Text=""/>
+                    Margin="449,462,292,39" Grid.Row="1" IsEnabled="True" Foreground="White" Text="{Binding SelectedItem.Email, ElementName=dgvKhachHang}"/>
 
 
 
 
                 <syncfusion:UpDown x:Name="txttuoi" HorizontalAlignment="Left" Height="33" Margin="148,464,0,0" NullValueText="Enter your weight:" Grid.Row="1" UseNullOption="True" Value="1" VerticalAlignment="Top" Width="152" Background="#FF212529" FocusedForeground="Black" Foreground="White" FocusedBackground="#FFB93232" NegativeBackground="#FF881C1C" RangeAdornerBackground="#FF4C1212"/>
+                <TextBox x:Name="txtCCCD"
+                          Text="{Binding SelectedItem.Cmtnd, ElementName=dgvKhachHang}"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    FontFamily="Times New Roman"
+                    Background="#272B2F"
+                    BorderThickness="0"
+                    Margin="153,344,588,154" Grid.Row="1" IsEnabled="True" Foreground="White"/>
+                <TextBox x:Name="txtSdt"
+                    FontSize="22"
+                    FontWeight="Medium"
+                    FontFamily="Times New Roman"
+                    Background="#272B2F"
+                    BorderThickness="0"
+                    Margin="450,343,291,158" Grid.Row="1" IsEnabled="True" Foreground="White" Text="{Binding SelectedItem.SoDienThoai, ElementName=dgvKhachHang}"/>
 
 
 

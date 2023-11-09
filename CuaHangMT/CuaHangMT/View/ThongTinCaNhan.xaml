@@ -35,7 +35,7 @@
                 FontFamily="Times New Roman"
                 Background="#272B2F"
                 BorderThickness="0"
-                Margin="321,39,379,461" Grid.Row="1"/>
+                Margin="321,39,379,461" Grid.Row="1" Foreground="White"/>
                 <TextBlock
                 Foreground="White"
                 FontSize="20"
@@ -49,7 +49,7 @@
                 Content="Cập nhập thông tin"
                 FontFamily="Times New Roman"
                 FontSize="20"
-                Background="#0BCDFF" Grid.Row="1">
+                Background="#0BCDFF" Grid.Row="1" Click="btnCapnhap_Click" >
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -67,28 +67,28 @@
                     FontFamily="Times New Roman"
                     Background="#272B2F"
                     BorderThickness="0"
-                    Margin="321,120,380,381" Grid.Row="1"/>
+                    Margin="321,120,380,381" Grid.Row="1" Foreground="White"/>
                 <TextBox x:Name="txttenhienthi"
                     FontSize="21"
                     FontWeight="Medium"
                     FontFamily="Times New Roman"
                     Background="#272B2F"
                     BorderThickness="0"
-                    Margin="320,200,381,301" Grid.Row="1"/>
+                    Margin="320,200,381,301" Grid.Row="1" Foreground="White"/>
                 <TextBox x:Name="txtMatKhauMoi"
                     FontSize="21"
                     FontWeight="Medium"
                     FontFamily="Times New Roman"
                     Background="#272B2F"
                     BorderThickness="0"
-                    Margin="321,280,380,220" Grid.Row="1"/>
+                    Margin="321,280,380,220" Grid.Row="1" Foreground="White"/>
                 <TextBox x:Name="txtNhapLai"
                     FontSize="21"
                     FontWeight="Medium"
                     FontFamily="Times New Roman"
                     Background="#272B2F"
                     BorderThickness="0"
-                    Margin="322,362,379,140" Grid.Row="1"/>
+                    Margin="322,362,379,140" Grid.Row="1" Foreground="White"/>
                 <TextBlock Text="Tài Khoản : "
                     Foreground="White"
                     FontSize="20"
