@@ -29,7 +29,22 @@ namespace CuaHangMT.Controller
 
 			return data;
 		}
+		public List<NhaCungCapModel> getncc()
+		{
+			DataTable data = new DataTable();
 
+			string query = "select * from NhaCungCap";
+			data = DataProvider.Instance.executeQuery(query);
+
+
+			List<NhaCungCapModel> list = new List<NhaCungCapModel>();
+			foreach (DataRow row in data.Rows)
+			{
+				list.Add(new NhaCungCapModel(row));
+			}
+
+			return list;
+		}
 		public NhaCungCapModel Check(string ma)
 		{
 			DataTable data = new DataTable();

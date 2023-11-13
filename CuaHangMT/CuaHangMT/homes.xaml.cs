@@ -32,7 +32,7 @@ namespace CuaHangMT
 				pq();
 			}
 			thongtincanhan.loadThongTin(acc);
-			xuat.thongtinxuat(acc);	
+			//xuat.thongtinxuat(acc);	
 		}
 		private void Window_MouseDown(object sender, MouseButtonEventArgs e)
 		{
@@ -42,6 +42,7 @@ namespace CuaHangMT
 		public void pq()
 		{
 			btnThongKe.Visibility=Visibility.Collapsed;
+			btnThongKeXuat.Visibility=Visibility.Collapsed;
 			btnTaiKhoan.Visibility=Visibility.Collapsed;	
 		}
 		private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -63,7 +64,8 @@ namespace CuaHangMT
 			nhacungcap.Visibility = Visibility.Collapsed;
 			maytinh.Visibility = Visibility.Collapsed; 
 			danhmuc.Visibility = Visibility.Collapsed;
-			thongke.Visibility = Visibility.Collapsed;
+			thongkenhap.Visibility = Visibility.Collapsed;
+			thongkexuat.Visibility = Visibility.Collapsed;
 			taikhoan.Visibility = Visibility.Collapsed;
 
 			control.Visibility = Visibility.Visible;
@@ -106,12 +108,18 @@ namespace CuaHangMT
 
 		private void btnThongKe_Click(object sender, RoutedEventArgs e)
 		{
-			SetActiveUserControl(thongke);
+			SetActiveUserControl(thongkenhap);
 		}
+		
 
 		private void btnTaiKhoan_Click(object sender, RoutedEventArgs e)
 		{
 			SetActiveUserControl(taikhoan);
+		}
+
+		private void btnThongKeXuat_Click(object sender, RoutedEventArgs e)
+		{
+			SetActiveUserControl(thongkexuat);
 		}
 	}
 }

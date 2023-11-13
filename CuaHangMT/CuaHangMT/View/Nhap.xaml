@@ -28,7 +28,7 @@
                          Background="#272B2F"
                          Grid.Column="2"
                          BorderThickness="0"
-                         Margin="90,10,60,10" Grid.ColumnSpan="2">
+                         Margin="90,10,60,10" Grid.ColumnSpan="2" Text="" Foreground="#FFFFF9F9">
                     </TextBox>
                     <Button x:Name="btnXacThucNCC"
                     Grid.Column="3"
@@ -37,7 +37,7 @@
                     Content="Xác thực NCC"
                     FontFamily="Times New Roman"
                     FontSize="20"
-                    Background="#0BCDFF">
+                    Background="#0BCDFF" Click="btnXacThucNCC_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border 
@@ -50,28 +50,28 @@
                         </Button.Template>
                     </Button>
                     <Button x:Name="btnHuyBo"
-                    Grid.Column="3"
-                    Margin="220,10,-236,10"
-                    Foreground="White"
-                    Content="Huỷ Bỏ"
-                    FontFamily="Times New Roman"
-                    FontSize="20"
-                    Background="#0BCDFF">
+                        Grid.Column="3"
+                        Margin="220,10,-236,10"
+                        Foreground="White"
+                        Content="Huỷ Bỏ"
+                        FontFamily="Times New Roman"
+                        FontSize="20"
+                        Background="#0BCDFF">
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
                                 <Border 
-                CornerRadius="10"
-                Background="{TemplateBinding Background}">
+                                    CornerRadius="10"
+                                    Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
-                    HorizontalAlignment="Center"/>
+                                        HorizontalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <ListView x:Name="dgvNhap" Grid.ColumnSpan="4" Margin="-1,78,-260,-317" Background="#272B2F"  >
+                    <ListView x:Name="dgvNhap" Grid.ColumnSpan="4" Margin="-1,78,-260,-317" Background="#272B2F" SelectionChanged="dgvNhap_SelectionChanged"  >
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Số lượng" Width="200" DisplayMemberBinding="{Binding Ma}">
+                                <GridViewColumn Header="Số lượng" Width="200" DisplayMemberBinding="{Binding SoLuong}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -86,7 +86,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Mã máy tính" Width="250" DisplayMemberBinding="{Binding TenNCC}">
+                                <GridViewColumn Header="Mã máy tính" Width="250" DisplayMemberBinding="{Binding MaMayTinh}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -101,7 +101,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="Số hoá đơn nhập" Width="250" DisplayMemberBinding="{Binding DiaChiNCC}">
+                                <GridViewColumn Header="Số hoá đơn nhập" Width="250" DisplayMemberBinding="{Binding DonGiaNhap}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -116,7 +116,7 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="ID" Width="200" DisplayMemberBinding="{Binding EmailNCC}">
+                                <GridViewColumn Header="ID" Width="200" DisplayMemberBinding="{Binding ID}">
                                     <GridViewColumn.HeaderContainerStyle>
                                         <Style TargetType="{x:Type GridViewColumnHeader}">
                                             <Setter Property="Foreground" Value="White" />
@@ -136,6 +136,29 @@
                             </GridView>
                         </ListView.View>
                     </ListView>
+                    <TextBox x:Name="txtSoLuongMT"
+                        FontSize="21"
+                        FontWeight="Medium"
+                        FontFamily="Times New Roman"
+                        Background="#272B2F"
+                        Grid.Column="2"
+                        BorderThickness="0"
+                        Margin="190,473,-40,-453" Grid.ColumnSpan="2" Foreground="White"  Text=""/>
+                    <TextBox x:Name="txtMaMT" Text=""
+                        FontSize="21"
+                        FontWeight="Medium"
+                        FontFamily="Times New Roman"
+                        Background="#272B2F"
+                        BorderThickness="0"
+                        Margin="190,418,-40,-398" Grid.ColumnSpan="2" Grid.Column="2" Foreground="White"/>
+                    <TextBox x:Name="txtThanhTienMT"
+                        FontSize="21"
+                        FontWeight="Medium"
+                        FontFamily="Times New Roman"
+                        Background="#272B2F"
+                        Grid.Column="2"
+                        BorderThickness="0"
+                        Margin="190,529,-40,-509" Grid.ColumnSpan="2" Foreground="White"/>
 
                 </Grid>
 
@@ -154,35 +177,19 @@
                 FontFamily="Times New Roman"
                 Grid.Column="0"
                 VerticalAlignment="Top"
-                Margin="188,369,488,0" Grid.Row="1"/>
-                <TextBox x:Name="txtMaMT"
-                FontSize="21"
-                FontWeight="Medium"
-                FontFamily="Times New Roman"
-                Background="#272B2F"
-                BorderThickness="0"
-                Margin="336,360,214,140" Grid.Row="1"/>
+                Margin="188,369,587,0" Grid.Row="1"/>
+
+
+
                 <TextBlock Text="Số lượng : "
                 Foreground="White"
                 FontSize="20"
                 FontFamily="Times New Roman"
                 Grid.Column="0"
                 VerticalAlignment="Top"
-                Margin="188,418,488,0" Grid.Row="1"/>
-                <syncfusion:UpDown Name="SoLuongMT" 
-                   Margin="336,418,224,84"
-                   Background="#272B2F" FocusedBackground="#FF272B2F" NegativeBackground="#FF272B2F" RangeAdornerBackground="#FF272B2F" ZeroColor="White" BorderBrush="#FF272B2F" NegativeBorderBrush="#FF1A1E29" FontSize="16" FontFamily="Times New Roman"
-                   BorderThickness="0"
-                   Step="1" Grid.Row="1">
+                Margin="188,418,587,0" Grid.Row="1"/>
 
-                    <syncfusion:UpDown.FocusedBorderBrush>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF5794BF"/>
-                            <GradientStop Color="#FFC7E2F1" Offset="1"/>
-                            <GradientStop Color="#FFBFDCED" Offset="1"/>
-                        </LinearGradientBrush>
-                    </syncfusion:UpDown.FocusedBorderBrush>
-                </syncfusion:UpDown>
+
                 <TextBlock Text="Thành tiền : "
                 Foreground="White"
                 FontSize="20"
@@ -190,20 +197,13 @@
                 Grid.Column="0"
                 VerticalAlignment="Top"
                 Margin="188,475,488,0" Grid.Row="1"/>
-                <TextBox x:Name="txtThanhTienMT"
-                FontSize="21"
-                FontWeight="Medium"
-                FontFamily="Times New Roman"
-                Background="#272B2F"
-                BorderThickness="0"
-                Margin="336,475,214,25" Grid.Row="1"/>
                 <Button x:Name="btnNhapHang"
                 Margin="722,360,42,140"
                 Foreground="White"
                 Content="Nhập hàng"
                 FontFamily="Times New Roman"
                 FontSize="20"
-                Background="#0BCDFF" Grid.Row="1">
+                Background="#0BCDFF" Grid.Row="1" Click="btnNhapHang_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -221,7 +221,7 @@
                 Content="Huỷ Bỏ"
                 FontFamily="Times New Roman"
                 FontSize="20"
-                Background="#0BCDFF" Grid.Row="1">
+                Background="#0BCDFF" Grid.Row="1" Click="btnHuyBoNhap_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 
@@ -239,7 +239,7 @@
                 Content="Thanh toán"
                 FontFamily="Times New Roman"
                 FontSize="20"
-                Background="#0BCDFF" Grid.Row="1">
+                Background="#0BCDFF" Grid.Row="1" Click="btnThanhToanNhap_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border 

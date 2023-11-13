@@ -100,8 +100,11 @@
     <Compile Include="View\TaiKhoanView.xaml.cs">
       <DependentUpon>TaiKhoanView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ThongKe.xaml.cs">
-      <DependentUpon>ThongKe.xaml</DependentUpon>
+    <Compile Include="View\ThongKeNhap.xaml.cs">
+      <DependentUpon>ThongKeNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongKeXuat.xaml.cs">
+      <DependentUpon>ThongKeXuat.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThongTinCaNhan.xaml.cs">
       <DependentUpon>ThongTinCaNhan.xaml</DependentUpon>
@@ -154,7 +157,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ThongKe.xaml">
+    <Page Include="View\ThongKeNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThongKeXuat.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

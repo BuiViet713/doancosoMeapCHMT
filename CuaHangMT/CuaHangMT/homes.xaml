@@ -172,7 +172,7 @@
             </Button.Template>
         </Button>
         <Button x:Name="btnTaiKhoan"
-            Margin="24,600,996,79"
+            Margin="25,654,995,25"
             Foreground="White"
             Content="Tài Khoản"
             FontFamily="Times New Roman"
@@ -192,10 +192,28 @@
         <Button x:Name="btnThongKe"
             Margin="26,540,996,140"
             Foreground="White"
-            Content="Thống Kê"
+            Content="Thống Kê Nhập"
             FontFamily="Times New Roman"
             FontSize="20"
             Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Click="btnThongKe_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border 
+                        CornerRadius="10"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnThongKeXuat"
+            Margin="26,596,996,83"
+            Foreground="White"
+            Content="Thống Kê Xuất"
+            FontFamily="Times New Roman"
+            FontSize="20"
+            Background="#0BCDFF" RenderTransformOrigin="-0.054,9.793" Click="btnThongKeXuat_Click" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border 
@@ -215,9 +233,10 @@
             <local:MayTinh x:Name="maytinh" Visibility="Collapsed"></local:MayTinh>
             <local:Nhap x:Name="nhap" Visibility="Collapsed"></local:Nhap>
             <local:TaiKhoanView x:Name="taikhoan" Visibility="Collapsed"></local:TaiKhoanView>
-            <local:ThongKe x:Name="thongke" Visibility="Collapsed"></local:ThongKe>
+            <local:ThongKeNhap x:Name="thongkenhap" Visibility="Collapsed"></local:ThongKeNhap>
             <local:Xuat x:Name="xuat" Visibility="Collapsed"></local:Xuat>
             <local:ThongTinCaNhan x:Name="thongtincanhan" Visibility="Collapsed"></local:ThongTinCaNhan>
+            <local:ThongKeXuat x:Name="thongkexuat" Visibility="Collapsed"></local:ThongKeXuat>
 
         </Grid>
 
@@ -289,6 +308,7 @@
                 </Button.Template>
             </Button>
         </Grid>
+       
 
     </Grid>
 </Window>
