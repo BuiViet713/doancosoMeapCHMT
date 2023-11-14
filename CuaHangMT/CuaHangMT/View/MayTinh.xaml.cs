@@ -37,10 +37,10 @@ namespace CuaHangMT.View
 
 		public void cbmt()
 		{
-			string query = "select IdDanhMuc from MayTinh";
+			string query = "select TenDanhMuc from DanhMuc";
 			DataTable dt = DataProvider.Instance.executeQuery(query);
 			cbidDanhMuc.ItemsSource = dt.DefaultView;
-			cbidDanhMuc.DisplayMemberPath = "IdDanhMuc";
+			cbidDanhMuc.DisplayMemberPath = "TenDanhMuc";
 		}
 
 
