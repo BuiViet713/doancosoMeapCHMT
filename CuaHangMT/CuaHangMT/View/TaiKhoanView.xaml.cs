@@ -36,6 +36,7 @@ namespace CuaHangMT.View
 			this.dgvTaiKhoan.ItemsSource = danhSachTaiKhoan;
 		}
 
+
 		private void btnXem_Click(object sender, RoutedEventArgs e)
 		{
 			LoadTK();
@@ -51,7 +52,7 @@ namespace CuaHangMT.View
 
 			if (TaiKhoanController.Instance.Add(txtTaiKhoan.Text, txtTenHienThi.Text, cbLoaiTK.SelectedIndex))
 			{
-				MessageBox.Show("Tại tài khoản thành công\r\n " + txtTaiKhoan.Text + " mật khẩu: 12345 .\r\nVui lòng đăng nhập và đổi mật khẩu");
+				MessageBox.Show("Tạo tài khoản thành công\r\n " + txtTaiKhoan.Text + " mật khẩu: 12345 .\r\nVui lòng đăng nhập và đổi mật khẩu");
 				LoadTK();
 			}
 			else

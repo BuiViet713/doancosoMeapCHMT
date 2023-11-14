@@ -178,7 +178,7 @@
             Grid.Column="0"
             VerticalAlignment="Top"
             Margin="19,351,739,0" Grid.Row="1" Height="27"/>
-                <TextBlock Text="Tên hiện thị: "
+                <TextBlock Text="Tên hiển thị: "
             Foreground="White"
             FontSize="20"
             FontFamily="Times New Roman"

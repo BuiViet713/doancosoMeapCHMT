@@ -37,10 +37,10 @@ namespace CuaHangMT.View
 
 		public void cbmt()
 		{
-			string query = "select idDanhMuc from MayTinh";
+			string query = "select IdDanhMuc from MayTinh";
 			DataTable dt = DataProvider.Instance.executeQuery(query);
 			cbidDanhMuc.ItemsSource = dt.DefaultView;
-			cbidDanhMuc.DisplayMemberPath = "idMayTinh";
+			cbidDanhMuc.DisplayMemberPath = "IdDanhMuc";
 		}
 
 
@@ -123,5 +123,5 @@ namespace CuaHangMT.View
 		{
 			loadMT();
 		}
-	}
+    }
 }
